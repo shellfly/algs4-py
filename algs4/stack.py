@@ -1,5 +1,5 @@
 """
-Execution:    python stack < input.txt
+A generic stack implemented using a singly linked list.
 
 % more tobe.txt 
 to be or not to - be - - that - - - is
