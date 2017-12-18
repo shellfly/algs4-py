@@ -35,6 +35,7 @@ class Selection:
                     minIndex = j
             arr[i], arr[minIndex] = arr[minIndex], arr[i]
         return arr
+
 if __name__ == '__main__':
     import sys
 
