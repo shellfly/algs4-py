@@ -17,29 +17,13 @@ A E E L M O P R S T X                 [ one string per line ]
 bed bug dad yes zoo ... all bad yet
 
 
-% python quick 3-way < words3.txt
+% python quick_3way < words3.txt
 
 all bad bed bug dad ... yes yet zoo    [ one string per line ]
 """
 
 
 class Quick3Way:
-
-    @classmethod
-    def partition(cls, arr, lo, hi):
-        v = arr[lo]
-        i = lo + 1
-        j = hi
-        while True:
-            while i < hi and arr[i] < v:
-                i += 1
-            while j > lo and arr[j] > v:
-                j -= 1
-            if i >= j or i == hi or j == lo:
-                break
-            arr[i], arr[j] = arr[j], arr[i]
-        arr[lo], arr[j] = arr[j], arr[lo]
-        return j
 
     @classmethod
     def quicksort(cls, arr, lo, hi):
