@@ -8,7 +8,7 @@ class MinPQ:
         self.swim(len(self.pq) - 1)
 
     def min(self):
-        return self.pq[1]
+        return self.pq[0]
 
     def del_min(self, ):
         m = self.pq[0]

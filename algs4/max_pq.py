@@ -7,8 +7,8 @@ class MaxPQ:
         self.pq.append(v)
         self.swim(len(self.pq) - 1)
 
-    def max():
-        return self.pq[1]
+    def max(self):
+        return self.pq[0]
 
     def del_max(self, ):
         m = self.pq[0]
