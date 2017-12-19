@@ -7,4 +7,4 @@ class StopWatch:
         self.start = time.time()
 
     def elapsed_time(self):
-        return round(time.time - self.start, 2)
+        return round(time.time() - self.start, 2)
