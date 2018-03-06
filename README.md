@@ -26,9 +26,29 @@ or
 ## Index
 
 * 1 FUNDAMENTALS
+
   * [Bag](algs4/bag.py)
   * [Queue](algs4/queue.py)
   * [Stack](algs4/stack.py)
+  * [UnionFind](algs4/uf.py)
+
+* 2 SORTING
+
+  * [Selection](algs4/selection.py)
+  * [Insertion](algs4/insertion.py)
+  * [Shell](algs4/shell.py)
+  * [Merge](algs4/merge.py)
+  * [Quick](algs4/quick.py)
+  * [Quick3Way](algs4/quick_3way.py)
+  * [MaxPQ](algs4/max_pq.py)
+  * [TopM](algs4/top_m.py)
+  * [IndexMinPQ](algs4/index_min_pq.py)
+  * [Multiway](algs4/multiway.py)
+  * [Heap](algs4/heap.py)
+
+* 3 SEARCHING
+* 4 GRAPHS
+* 5 STRING
 
 ## License
 
