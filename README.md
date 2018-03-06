@@ -13,8 +13,8 @@ Make a Python implementation of the library so that a Python programmer can lear
 
 Try to keep the interface and variable name consistent with the original book while not violating Python coding standards.
 
-
 ## Usage
+
 `# pip install algs4`
 
 `from algs4 import *`
@@ -25,11 +25,11 @@ or
 
 ## Index
 
-- 1 FUNDAMENTALS
-  - [Bag](tree/master/algs4/bag.py)
-  - [Queue](tree/master/algs4/queue.py)
-  - [Stack](tree/master/algs4/stack.py)
-    
+* 1 FUNDAMENTALS
+  * [Bag](algs4/bag.py)
+  * [Queue](algs4/queue.py)
+  * [Stack](algs4/stack.py)
+
 ## License
 
 This code is released under MIT.
