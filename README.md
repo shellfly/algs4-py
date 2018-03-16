@@ -5,8 +5,6 @@ This repository contains the Python source code for the algorithms in the textbo
 
 The official Java source code is <a href="https://github.com/kevin-wayne/algs4">here</a>.
 
-The programs are organized in the package <code>algs4</code>.
-
 ## Goals
 
 Make a Python implementation of the library so that a Python programmer can learn this book easily.
@@ -16,10 +14,6 @@ Try to keep the interface and variable name consistent with the original book wh
 ## Usage
 
 `# pip install algs4`
-
-`from algs4 import *`
-
-or
 
 `from algs4 import Stack`
 
@@ -47,6 +41,12 @@ or
   * [Heap](algs4/heap.py)
 
 * 3 SEARCHING
+
+  * [FrequencyCounter](algs4/frequency_counter.py)
+  * [SequentialSearchST](algs4/sequential_search.py)
+  * [BinarySearchST](algs4/binary_search_st.py)
+  * [BST](algs4/bst.py)
+
 * 4 GRAPHS
 * 5 STRING
 
