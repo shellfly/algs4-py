@@ -1,14 +1,15 @@
 """
-   Execution:    python bst.py < input.txt
+   Execution:    python RedBlackBST.py < input.txt
 
-   Data files:   https://algs4.cs.princeton.edu/32bst/tinyST.txt  
- 
-   A symbol table implemented with a binary search tree.
-  
+   Data files:   https://algs4.cs.princeton.edu/33balanced/tinyST.txt
+
+   A symbol table implemented using a left-leaning red-black BST.
+   This is the 2-3 version.
+
    % more tinyST.txt
    S E A R C H E X A M P L E
-   
-   % python bst.py < tinyST.txt
+
+   % python RedBlackBST.py < tinyST.txt
    A 8
    C 4
    E 12
@@ -19,25 +20,32 @@
    R 3
    S 0
    X 7
- 
- """
+"""
 from algs4.queue import Queue
 
 
 class Node:
 
-    def __init__(self, key, val, N):
+    def __init__(self, key, val, color, size):
         self.key = key
         self.val = val
-        self.N = N
         self.left = None
         self.right = None
+        self.color = color
+        self.size = size
 
 
-class BST:
+class RedBlackBST:
+    RED = True
+    BLACK = False
 
     def __init__(self):
         self.root = None
+
+    def is_red(self, x):
+        if x is None:
+            return False
+        return x.color == RedBlackBST.RED
 
     def size(self):
         return self._size(self.root)
@@ -45,37 +53,111 @@ class BST:
     def _size(self, x):
         if x is None:
             return 0
+        return x.size
 
-        return x.N
+    def is_empty(self):
+        return self.root is None
 
     def get(self, key):
         return self._get(self.root, key)
 
     def _get(self, x, key):
-        if x is None:
-            return
+        while x is not None:
+            if x.key == key:
+                return x.val
+            elif x.key < key:
+                x = x.right
+            else:
+                x = x.left
+        return None
 
-        if x.key > key:
-            return self._get(x.left, key)
-        elif x.key < key:
-            return self._get(x.right, key)
-        else:
-            return x.val
+    def contains(self, key):
+        return self.get(key) is not None
 
     def put(self, key, val):
         self.root = self._put(self.root, key, val)
+        self.root.color = RedBlackBST.BLACK
 
     def _put(self, x, key, val):
         if x is None:
-            return Node(key, val, 1)
+            return Node(key, val, RedBlackBST.RED, 1)
         if x.key > key:
             x.left = self._put(x.left, key, val)
         elif x.key < key:
             x.right = self._put(x.right, key, val)
         else:
             x.val = val
-        x.N = self._size(x.left) + self._size(x.right) + 1
+
+        # fix-up any right-leaning links
+        if self.is_red(x.right) and not self.is_red(x.left):
+            x = self.rotate_left(x)
+        if self.is_red(x.left) and self.is_red(x.left.left):
+            x = self.rotate_right(x)
+        if self.is_red(x.left) and self.is_red(x.right):
+            self.flip_colors(x)
+
+        x.size = self._size(x.left) + self._size(x.right) + 1
         return x
+
+    def rotate_left(self, h):
+        x = h.right
+        h.right = x.left
+        x.left = h
+        x.color = h.color
+        h.color = RedBlackBST.RED
+        x.size = h.size
+        h.size = self._size(h.left) + self._size(h.right) + 1
+        return x
+
+    def rotate_right(self, h):
+        x = h.left
+        h.left = x.right
+        x.right = h
+        x.color = h.color
+        h.color = RedBlackBST.RED
+        x.size = h.size
+        h.size = self._size(h.left) + self._size(h.right) + 1
+        return x
+
+    def flip_colors(self, h):
+        """
+        flip the colors of a node and its two children
+        """
+
+        h.color = not h.color
+        h.left.color = not h.left.color
+        h.right.color = not h.right.color
+
+    def move_red_left(self, h):
+        """
+        Assuming that h is red and both h.left and h.left.left
+        are black, make h.left or one of its children red.
+        """
+        self.flip_colors(h)
+        if self.is_red(h.right.left):
+            h.right = self.rotate_right(h.right)
+            h = self.rotate_left(h)
+            self.flip_colors(h)
+        return h
+
+    def move_red_right(self, h):
+        """
+        Assuming that h is red and both h.right and h.right.left
+        are black, make h.right or one of its children red.
+        """
+        self.flip_colors(h)
+        if self.is_red(h.left.left):
+            h = self.rotate_right(h)
+            self.flip_colors(h)
+        return h
+
+    def height(self):
+        return self._height(self.root)
+
+    def _height(self, x):
+        if x is None:
+            return -1
+        return 1 + max(self._height(x.left), self._height(x.right))
 
     def level_order(self):
         """Return the keys in the BST in level order"""
@@ -232,7 +314,7 @@ class BST:
 if __name__ == '__main__':
     import sys
 
-    st = BST()
+    st = RedBlackBST()
     i = 0
     for line in sys.stdin:
         for key in line.split():
