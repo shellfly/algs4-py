@@ -281,35 +281,72 @@ class RedBlackBST:
             return self._size(x.left)
 
     def delete(self, key):
-        self.root = self._delete(self.root, key)
+        if key is None:
+            raise ValueError("argument is null")
 
-    def _delete(self, x, key):
-        if x is None:
+        # if both children of root are black, set root to red
+        if not self.is_red(self.root.left) and not self.is_red(self.root.right):
+            self.root.color = RedBlackBST.RED
+
+        self.root = self._delete(self.root, key)
+        if not self.is_empty():
+            self.root.color = RedBlackBST.BLACK
+
+    def _delete(self, h, key):
+        if h is None:
             return None
 
-        if x.key > key:
-            x.left = self._delete(x.left, key)
-        elif x.key < key:
-            x.right = self._delete(x.right, key)
+        if h.key > key:
+            if not self.is_red(h.left) and not self.is_red(h.left.left):
+                h = self.move_red_left(h)
+            h.left = self._delete(h.left, key)
         else:
-            if x.right is None:
-                return x.left
-            if x.left is None:
-                return x.right
-            t = x
-            x = self._min(t.right)
-            x.right = self._deleteMin(t.right)
-            x.left = t.left
+            if self.is_red(h.left):
+                h = self.rotate_right(h)
+            if key == h.key and h.right is None:
+                return None
+            if not self.is_red(h.right) and not self.is_red(h.right.left):
+                h = self.move_red_right(h)
 
-    def deleteMin(self):
+            if key == h.key:
+                x = self.min(h.right)
+                h.key = x.key
+                h.val = x.val
+                h.right = self._delete_min(h.right)
+            else:
+                h.right = self._delete(h.right, key)
+
+        return self.balance(h)
+
+    def delete_min(self):
+        if self.is_empty():
+            raise ValueError("BST underflow")
+
+        if not self.is_red(self.root.left) and not self.is_red(self.root.right):
+            self.root.color = RedBlackBST.RED
+
         self.root = self._deleteMin(self.root)
+        if not is_empty(self.root):
+            self.root.color = RedBlackBST.BLACk
 
-    def _deleteMin(self, x):
-        if x.left is None:
-            return x.right
-        x.left = self._deleteMin(x.left)
-        x.N = self._size(x.left) + self._size(x.right) + 1
-        return x
+    def _delete_min(self, h):
+        if h.left is None:
+            return None
+        if not self.is_red(h.left) and not self.is_red(h.left.left):
+            h = self.move_red_left(h)
+
+        h.left = self._deleteMin(h.left)
+        return self.balance(h)
+
+    def balance(self, h):
+        if self.is_red(h):
+            h = self.rotate_left(h)
+        if self.is_red(h.left) and self.is_red(h.left.left):
+            h = self.rotate_right(h)
+        if self.is_red(h.left) and self.is_red(h.right):
+            self.flip_colors(h)
+        h.size = self._size(h.left) + self._size(h.right) + 1
+        return h
 
 if __name__ == '__main__':
     import sys

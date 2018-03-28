@@ -219,10 +219,10 @@ class BST:
             x.right = self._deleteMin(t.right)
             x.left = t.left
 
-    def deleteMin(self):
+    def delete_min(self):
         self.root = self._deleteMin(self.root)
 
-    def _deleteMin(self, x):
+    def _delete_min(self, x):
         if x.left is None:
             return x.right
         x.left = self._deleteMin(x.left)
