@@ -46,6 +46,9 @@ Try to keep the interface and variable name consistent with the original book wh
   * [SequentialSearchST](algs4/sequential_search.py)
   * [BinarySearchST](algs4/binary_search_st.py)
   * [BST](algs4/bst.py)
+  * [RedBlackBST](algs4/red_black_bst.py)
+  * [SeparateChainingHashST](algs4/separate_chaining_hash_st.py)
+  * [LinearProbingHashST](algs4/linear_probing_hash_st.py)
 
 * 4 GRAPHS
 * 5 STRING
