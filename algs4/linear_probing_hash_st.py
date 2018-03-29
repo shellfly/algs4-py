@@ -1,15 +1,15 @@
 """
-   Execution:    python RedBlackBST.py < input.txt
+   Execution:    python linear_probing_hash_st.py < input.txt
 
    Data files:   https://algs4.cs.princeton.edu/33balanced/tinyST.txt
 
-   A symbol table implemented using a left-leaning red-black BST.
+   A symbol table implemented using a linear probing hash.
    This is the 2-3 version.
 
    % more tinyST.txt
    S E A R C H E X A M P L E
 
-   % python RedBlackBST.py < tinyST.txt
+   % python linear_probing_hash_st.py < tinyST.txt
    A 8
    C 4
    E 12
