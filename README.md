@@ -56,6 +56,7 @@ Try to keep the interface and variable name consistent with the original book wh
   * [DepthFirstSearch](algs4/depth_first_search.py)
   * [DepthFirstPaths](algs4/depth_first_paths.py)
   * [BreadthFirstPaths](algs4/breadth_first_paths.py)
+  * [CC](algs4/cc.py)
 
 * 5 STRING
 
