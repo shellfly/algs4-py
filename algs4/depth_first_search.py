@@ -21,19 +21,16 @@ from algs4.graph import Graph
 class DepthFirstSearch:
 
     def __init__(self, G, s):
-        self._marked = [False for _ in range(G.V)]
+        self.marked = [False for _ in range(G.V)]
         self.count = 0
         self.dfs(G, s)
 
     def dfs(self, G, v):
-        self._marked[v] = True
+        self.marked[v] = True
         self.count += 1
         for w in G.adj[v]:
-            if not self._marked[w]:
+            if not self.marked[w]:
                 self.dfs(G, w)
-
-    def marked(self, s):
-        return self._marked[s]
 
 if __name__ == '__main__':
     import sys
@@ -48,7 +45,7 @@ if __name__ == '__main__':
         g.add_edge(v, w)
     search = DepthFirstSearch(g, s)
     for v in range(g.V):
-        if search.marked(v):
+        if search.marked[v]:
             print(str(v) + " ")
     if search.count == g.V:
         print("connected")

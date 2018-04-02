@@ -34,20 +34,20 @@ from algs4.graph import Graph
 class DepthFirstPaths:
 
     def __init__(self, G, s):
-        self._marked = [False for _ in range(G.V)]
+        self.marked = [False for _ in range(G.V)]
         self.edge_to = [0 for _ in range(G.V)]
         self.s = s
         self.dfs(G, s)
 
     def dfs(self, G, v):
-        self._marked[v] = True
+        self.marked[v] = True
         for w in G.adj[v]:
-            if not self._marked[w]:
+            if not self.marked[w]:
                 self.edge_to[w] = v
                 self.dfs(G, w)
 
     def has_path_to(self, v):
-        return self._marked[v]
+        return self.marked[v]
 
     def path_to(self, v):
         if not self.has_path_to(v):
