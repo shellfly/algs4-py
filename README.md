@@ -51,6 +51,10 @@ Try to keep the interface and variable name consistent with the original book wh
   * [LinearProbingHashST](algs4/linear_probing_hash_st.py)
 
 * 4 GRAPHS
+
+  * [Graph](algs4/graph.py)
+  * [DepthFirstSearch](algs4/depth_first_search.py)
+
 * 5 STRING
 
 ## License
