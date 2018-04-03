@@ -58,6 +58,7 @@ Try to keep the interface and variable name consistent with the original book wh
   * [BreadthFirstPaths](algs4/breadth_first_paths.py)
   * [CC](algs4/cc.py)
   * [Cycle](algs4/cycle.py)
+  * [SymbolGraph](algs4/symbol_graph.py)
 
 * 5 STRING
 
