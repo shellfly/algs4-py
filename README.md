@@ -63,6 +63,7 @@ Try to keep the interface and variable name consistent with the original book wh
 
 * 5 STRING
 
+  * [LSD](algs4/lsd.py)
 ## License
 
 This code is released under MIT.
