@@ -34,7 +34,6 @@ class DepthFirstSearch:
 
 if __name__ == '__main__':
     import sys
-    print(sys.argv)
     f = open(sys.argv[1])
     s = int(sys.argv[2])
     V = int(f.readline())
