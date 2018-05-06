@@ -60,10 +60,12 @@ Try to keep the interface and variable name consistent with the original book wh
   * [Cycle](algs4/cycle.py)
   * [SymbolGraph](algs4/symbol_graph.py)
   * [DegreesOfSeparation](algs4/degrees_of_separation.py)
+  * [Digraph](algs4/digraph.py)
 
 * 5 STRING
 
   * [LSD](algs4/lsd.py)
+
 ## License
 
 This code is released under MIT.
