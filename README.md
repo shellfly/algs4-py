@@ -62,6 +62,7 @@ Try to keep the interface and variable name consistent with the original book wh
   * [DegreesOfSeparation](algs4/degrees_of_separation.py)
   * [Digraph](algs4/digraph.py)
   * [DirectedDFS](algs4/directed_dfs.py)
+  * [DirectedCycle](algs4/directed_cycle.py)
 
 * 5 STRING
 
