@@ -11,7 +11,7 @@ Make a Python implementation of the library so that a Python programmer can lear
 
 Try to keep the interface and variable name consistent with the original book while not violating Python coding standards.
 
-## Usage
+## Install (WIP)
 
 `# pip install algs4`
 
@@ -76,3 +76,5 @@ This code is released under MIT.
 
 Issue reports and code fixes are welcome. please follow the same style as the code in the repository and add test for your
 code.
+
+[contributing guide](contributing.md)
