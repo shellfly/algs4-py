@@ -5,7 +5,7 @@ Execution:    python bag < input.txt
 % more tobe.txt
 to be or not to - be - - that - - - is
 
-% python stack < tobe.txt
+% python bag.py < tobe.txt
 to be or not to - be - - that - - - is
 """
 

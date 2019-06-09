@@ -1,8 +1,8 @@
 class Node:
 
-    def __init__(self, item, nextItem):
+    def __init__(self, item, next_node):
         self.item = item
-        self.next = nextItem
+        self.next = next_node
 
 
 class LinkIterator:

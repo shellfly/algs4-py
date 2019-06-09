@@ -1,9 +1,9 @@
 class Node:
 
-    def __init__(self, key, val, nextItem):
+    def __init__(self, key, val, next_node):
         self.key = key
         self.val = val
-        self.next = nextItem
+        self.next = next_node
 
 
 class STKeyIterator:
