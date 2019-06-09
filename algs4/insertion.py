@@ -6,7 +6,7 @@ Sorts a sequence of strings from standard input using insertion sort.
 
 S O R T E X A M P L E
 
-% python insertion < tiny.txt
+% python insertion.py < tiny.txt
 
 A E E L M O P R S T X                 [ one string per line ]
 
@@ -17,7 +17,7 @@ A E E L M O P R S T X                 [ one string per line ]
 bed bug dad yes zoo ... all bad yet
 
 
-% python insertion < words3.txt
+% python insertion.py < words3.txt
 
 all bad bed bug dad ... yes yet zoo    [ one string per line ]
 """
@@ -36,6 +36,7 @@ class Insertion:
                 arr[j], arr[j - 1] = arr[j - 1], arr[j]
                 j -= 1
         return arr
+
 
 if __name__ == '__main__':
     import sys

@@ -1,8 +1,8 @@
 """
- Execution:    python stopwatch n
+ Execution:    python stopwatch.py n
  utility class to measure the running time (wall clock) of a program.
  
- % python stopwatch 10000000
+ % python stopwatch.py 10000000
 2.108185e+10 3.60 seconds
 2.108185e+10 4.53 seconds
  
@@ -17,6 +17,7 @@ class StopWatch:
 
     def elapsed_time(self):
         return round(time.time() - self.start, 2)
+
 
 if __name__ == '__main__':
     import sys

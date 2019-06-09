@@ -6,7 +6,7 @@ Sorts a sequence of strings from standard input using selection sort.
 
 S O R T E X A M P L E
 
-% python selection < tiny.txt
+% python selection.py < tiny.txt
 
 A E E L M O P R S T X                 [ one string per line ]
 
@@ -17,7 +17,7 @@ A E E L M O P R S T X                 [ one string per line ]
 bed bug dad yes zoo ... all bad yet
 
 
-% python selection < words3.txt
+% python selection.py < words3.txt
 
 all bad bed bug dad ... yes yet zoo    [ one string per line ]
 """
@@ -35,6 +35,7 @@ class Selection:
                     minIndex = j
             arr[i], arr[minIndex] = arr[minIndex], arr[i]
         return arr
+
 
 if __name__ == '__main__':
     import sys

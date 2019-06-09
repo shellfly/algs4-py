@@ -6,7 +6,7 @@ Sorts a sequence of strings from standard input using quick 3-way sort.
 
 S O R T E X A M P L E
 
-% python quick 3-way < tiny.txt
+% python quick_3way.py < tiny.txt
 
 A E E L M O P R S T X                 [ one string per line ]
 
@@ -17,7 +17,7 @@ A E E L M O P R S T X                 [ one string per line ]
 bed bug dad yes zoo ... all bad yet
 
 
-% python quick_3way < words3.txt
+% python quick_3way.py < words3.txt
 
 all bad bed bug dad ... yes yet zoo    [ one string per line ]
 """
@@ -50,6 +50,7 @@ class Quick3Way:
     @classmethod
     def sort(cls, arr):
         return cls.quicksort(arr, 0, len(arr) - 1)
+
 
 if __name__ == '__main__':
     import sys

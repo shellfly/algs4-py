@@ -1,6 +1,6 @@
 """
     Execution:
-        python frequency_counter L < input.txt
+        python frequency_counter.py L < input.txt
     Data files:   
         https://algs4.cs.princeton.edu/31elementary/tnyTale.txt
         https://algs4.cs.princeton.edu/31elementary/tale.txt
@@ -12,40 +12,35 @@
     the most frequently occurring word that has length greater than
     a given threshold.
 
-    % python frequency_counter 1 < tinyTale.txt
+    % python frequency_counter.py 1 < tinyTale.txt
     it 10
   
-    % python frequency_counter 8 < tale.txt
+    % python frequency_counter.py 8 < tale.txt
     business 122
   
-    % python frequency_counter 10 < leipzig1M.txt
+    % python frequency_counter.py 10 < leipzig1M.txt
     government 24763
 """
 
-#from algs4.st import ST
+import sys
 from algs4.sequential_search_st import SequentialSearchST
 
+minlen = int(sys.argv[1])
+st = SequentialSearchST()
 
-class FrequencyCounter:
-    pass
+for line in sys.stdin:
+    words = line.split()
+    for word in words:
+        if len(word) < minlen:
+            continue
+        if not st.contains(word):
+            st.put(word, 1)
+        else:
+            st.put(word, st.get(word) + 1)
 
-if __name__ == "__main__":
-    import sys
-    minlen = int(sys.argv[1])
-    st = SequentialSearchST()
-    for line in sys.stdin:
-        words = line.split()
-        for word in words:
-
-            if len(word) < minlen:
-                continue
-            if not st.contains(word):
-                st.put(word, 1)
-            else:
-                st.put(word, st.get(word) + 1)
-    maxstr = ""
-    st.put(maxstr, 0)
-    for word in st.keys():
-        if st.get(word) > st.get(maxstr):
-            maxstr = word
-    print(maxstr, " ", st.get(maxstr))
+maxstr = ""
+st.put(maxstr, 0)
+for word in st.keys():
+    if st.get(word) > st.get(maxstr):
+        maxstr = word
+print(maxstr, " ", st.get(maxstr))

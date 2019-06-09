@@ -1,10 +1,10 @@
 """
-Execution:    python queue < input.txt
+Execution:    python queue.py < input.txt
 
 % more tobe.txt 
 to be or not to - be - - that - - - is
 
-% python queue < tobe.txt
+% python queue.py < tobe.txt
 to be or not to be (2 left on queue)
 """
 
