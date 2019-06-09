@@ -1,21 +1,19 @@
 """
-   Compilation:  javac Cycle.java
-   Execution:    java  Cycle filename.txt
-   Dependencies: Graph.java Stack.java In.java StdOut.java
-   Data files:   https: // algs4.cs.princeton.edu / 41graph / tinyG.txt
-                 https: // algs4.cs.princeton.edu / 41graph / mediumG.txt
-                 https: // algs4.cs.princeton.edu / 41graph / largeG.txt
+   Execution:    python cycle.py filename.txt
+   Data files:   https://algs4.cs.princeton.edu/41graph/tinyG.txt
+                 https://algs4.cs.princeton.edu/41graph/mediumG.txt
+                 https://algs4.cs.princeton.edu/41graph/largeG.txt
  
    Identifies a cycle.
    Runs in O(E + V) time.
  
-  % java Cycle tinyG.txt
+  % python cycle.py tinyG.txt
    3 4 5 3
  
-  % java Cycle mediumG.txt
+  % python cycle.py mediumG.txt
    15 0 225 15
  
-  % java Cycle largeG.txt
+  % python cycle.py largeG.txt
    996673 762 840164 4619 785187 194717 996673
  """
 
@@ -38,6 +36,7 @@ class Cycle:
                 self.dfs(G, w, v)
             elif w != u:
                 self.has_cycle = True
+
 
 if __name__ == "__main__":
     import sys
