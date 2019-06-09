@@ -1,6 +1,6 @@
 
 """
-Execution:    python bag < input.txt
+Execution:    python bag.py < input.txt
 
 % more tobe.txt
 to be or not to - be - - that - - - is

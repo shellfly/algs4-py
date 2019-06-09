@@ -8,7 +8,7 @@
         //algs4.cs.princeton.edu / 41graph / movies.txt
     
     
-     % python degrees_of_separation routes.txt " " "JFK"
+     % python degrees_of_separation.py routes.txt " " "JFK"
       LAS
          JFK
          ORD
@@ -21,7 +21,7 @@
       EWR
          Not in database.
     
-     % python degrees_of_separation movies.txt "/" "Bacon, Kevin"
+     % python degrees_of_separation.py movies.txt "/" "Bacon, Kevin"
       Kidman, Nicole
          Bacon, Kevin
          Woodsman, The(2004)
@@ -35,7 +35,7 @@
          Dead Men Don't Wear Plaid(1982)
          Grant, Cary
     
-     % python degrees_of_separation movies.txt "/" "Animal House (1978)"
+     % python degrees_of_separation.py movies.txt "/" "Animal House (1978)"
       Titanic(1997)
          Animal House(1978)
          Allen, Karen(I)
