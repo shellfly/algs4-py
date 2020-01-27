@@ -51,6 +51,13 @@ class Quick3Way:
     def sort(cls, arr):
         return cls.quicksort(arr, 0, len(arr) - 1)
 
+    @classmethod
+    def is_sorted(cls, arr):
+        for i in range(1, len(arr)):
+            if arr[i] < arr[i-1]:
+                return False
+        return True
+
 
 if __name__ == '__main__':
     import sys
@@ -60,3 +67,4 @@ if __name__ == '__main__':
         items.extend(line.split())
     print('     items: ', items)
     print('sort items: ', Quick3Way.sort(items))
+    assert Quick3Way.is_sorted(items)
