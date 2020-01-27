@@ -55,7 +55,8 @@ class Quick3Way:
 if __name__ == '__main__':
     import sys
 
+    items = []
     for line in sys.stdin:
-        items = line.split()
-        print('     items: ', items)
-        print('sort items: ', Quick3Way.sort(items))
+        items.extend(line.split())
+    print('     items: ', items)
+    print('sort items: ', Quick3Way.sort(items))

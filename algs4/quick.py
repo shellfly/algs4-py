@@ -28,16 +28,21 @@ class Quick:
     @classmethod
     def partition(cls, arr, lo, hi):
         v = arr[lo]
-        i = lo + 1
-        j = hi
+        i = lo
+        j = hi+1
         while True:
-            while i < hi and arr[i] < v:
+            while True:
                 i += 1
-            while j > lo and arr[j] > v:
+                if not (i < hi and arr[i] < v):
+                    break
+            while True:
                 j -= 1
-            if i >= j or i == hi or j == lo:
+                if not (j > lo and arr[j] > v):
+                    break
+            if i >= j:
                 break
             arr[i], arr[j] = arr[j], arr[i]
+
         arr[lo], arr[j] = arr[j], arr[lo]
         return j
 
@@ -59,7 +64,8 @@ class Quick:
 if __name__ == '__main__':
     import sys
 
+    items = []
     for line in sys.stdin:
-        items = line.split()
-        print('     items: ', items)
-        print('sort items: ', Quick.sort(items))
+        items.extend(line.split())
+    print('     items: ', items)
+    print('sort items: ', Quick.sort(items))
