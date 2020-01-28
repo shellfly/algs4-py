@@ -52,11 +52,20 @@ class Heap:
 
         return arr
 
+    @classmethod
+    def is_sorted(cls, arr):
+        for i in range(1, len(arr)):
+            if arr[i] < arr[i-1]:
+                return False
+        return True
+
 
 if __name__ == '__main__':
     import sys
 
+    items = []
     for line in sys.stdin:
-        items = line.split()
-        print('     items: ', items)
-        print('sort items: ', Heap.sort(items))
+        items.extend(line.split())
+    print('     items: ', items)
+    print('sort items: ', Heap.sort(items))
+    assert Heap.is_sorted(items)

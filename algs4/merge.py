@@ -51,7 +51,7 @@ class Merge:
         if lo >= hi:
             return
 
-        mid = (lo + hi) / 2
+        mid = (lo + hi) // 2
         cls.mergesort(arr, lo, mid)
         cls.mergesort(arr, mid + 1, hi)
         cls.merge(arr, lo, mid, hi)
@@ -61,11 +61,20 @@ class Merge:
     def sort(cls, arr):
         return cls.mergesort(arr, 0, len(arr) - 1)
 
+    @classmethod
+    def is_sorted(cls, arr):
+        for i in range(1, len(arr)):
+            if arr[i] < arr[i-1]:
+                return False
+        return True
+
 
 if __name__ == '__main__':
     import sys
 
+    items = []
     for line in sys.stdin:
-        items = line.split()
-        print('     items: ', items)
-        print('sort items: ', Merge.sort(items))
+        items.extend(line.split())
+    print('     items: ', items)
+    print('sort items: ', Merge.sort(items))
+    assert Merge.is_sorted(items)
