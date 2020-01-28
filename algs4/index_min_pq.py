@@ -21,13 +21,14 @@ class IndexMinPQ:
         return index in self.keys
 
     def delete(self, i):
-        index = self.qp[index]
-        item = self.pq[n]
+        index = self.qp[i]
+        item = self.pq[index]
         self.pq[index], self.pq[-1] = self.pq[-1], self.pq[index]
         self.swim(index)
         self.sink(index)
         self.keys[i] = None
         self.qp[i] = -1
+        return item
 
     def greater(self, i, j):
         return self.keys[self.pq[i]] > self.keys[self.pq[j]]
