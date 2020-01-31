@@ -43,7 +43,7 @@ Try to keep the interface and variable name consistent with the original book wh
 * 3 SEARCHING
 
   * [FrequencyCounter](algs4/frequency_counter.py)
-  * [SequentialSearchST](algs4/sequential_search.py)
+  * [SequentialSearchST](algs4/sequential_search_st.py)
   * [BinarySearchST](algs4/binary_search_st.py)
   * [BST](algs4/bst.py)
   * [RedBlackBST](algs4/red_black_bst.py)

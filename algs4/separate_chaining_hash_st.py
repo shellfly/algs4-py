@@ -74,10 +74,11 @@ class SeparateChainingHashST:
         tmp = SeparateChainingHashST(chains)
         for i in range(self.m):
             for key in self.st[i].keys():
-                tmp.put(key, st[i].get(key))
+                tmp.put(key, self.st[i].get(key))
         self.m = tmp.m
         self.n = tmp.n
         self.st = tmp.st
+
 
 if __name__ == '__main__':
     import sys

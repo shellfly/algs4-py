@@ -1,3 +1,28 @@
+"""
+ *  Execution:    python3 sequential_search_st.py
+ *  Data files:   https://algs4.cs.princeton.edu/31elementary/tinyST.txt
+ *  
+ *  Symbol table implementation with sequential search in an
+ *  unordered linked list of key-value pairs.
+ *
+ *  % more tinyST.txt
+ *  S E A R C H E X A M P L E
+ *
+ *  % python3 sequential_search_st.py < tinyST.txt
+ *  L 11
+ *  P 10
+ *  M 9
+ *  X 7
+ *  H 5
+ *  C 4
+ *  R 3
+ *  A 8
+ *  E 12
+ *  S 0
+ *
+ """
+
+
 from algs4.utils.st import Node, STKeyIterator
 
 
@@ -51,3 +76,17 @@ class SequentialSearchST:
 
     def is_empty(self):
         return self.size == 0
+
+
+if __name__ == '__main__':
+    import sys
+
+    st = SequentialSearchST()
+    i = 0
+    for line in sys.stdin:
+        for key in line.split():
+            st.put(key, i)
+            i += 1
+
+    for key in st.keys():
+        print(key + " " + str(st.get(key)))
