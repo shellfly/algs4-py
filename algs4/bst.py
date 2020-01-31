@@ -113,6 +113,8 @@ class BST:
             self._keys(x.right, queue, lo, hi)
 
     def max(self):
+        if self.is_empty():
+            raise Exception("empty bst")
         return self._max(self.root).key
 
     def _max(self, x):
@@ -122,6 +124,8 @@ class BST:
         return self._max(x.right)
 
     def min(self):
+        if self.is_empty():
+            raise Exception("empty bst")
         return self._min(self.root).key
 
     def _min(self, x):
@@ -228,6 +232,10 @@ class BST:
         x.left = self._deleteMin(x.left)
         x.N = self._size(x.left) + self._size(x.right) + 1
         return x
+
+    def is_empty(self):
+        return self.root == None
+
 
 if __name__ == '__main__':
     import sys
