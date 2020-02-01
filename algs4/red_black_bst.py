@@ -174,7 +174,7 @@ class RedBlackBST:
             queue.enqueue(x.right)
         return keys
 
-    def keys(self):
+    def Keys(self):
         """
          Returns all keys in the symbol table
          To iterate over all of the keys in the symbol table named {@code st},
@@ -309,7 +309,7 @@ class RedBlackBST:
                 h = self.move_red_right(h)
 
             if key == h.key:
-                x = self.min(h.right)
+                x = self._min(h.right)
                 h.key = x.key
                 h.val = x.val
                 h.right = self._delete_min(h.right)
@@ -325,9 +325,9 @@ class RedBlackBST:
         if not self.is_red(self.root.left) and not self.is_red(self.root.right):
             self.root.color = RedBlackBST.RED
 
-        self.root = self._deleteMin(self.root)
-        if not is_empty(self.root):
-            self.root.color = RedBlackBST.BLACk
+        self.root = self._delete_min(self.root)
+        if not self.is_empty():
+            self.root.color = RedBlackBST.BLACK
 
     def _delete_min(self, h):
         if h.left is None:
@@ -335,7 +335,7 @@ class RedBlackBST:
         if not self.is_red(h.left) and not self.is_red(h.left.left):
             h = self.move_red_left(h)
 
-        h.left = self._deleteMin(h.left)
+        h.left = self._delete_min(h.left)
         return self.balance(h)
 
     def balance(self, h):
@@ -347,6 +347,7 @@ class RedBlackBST:
             self.flip_colors(h)
         h.size = self._size(h.left) + self._size(h.right) + 1
         return h
+
 
 if __name__ == '__main__':
     import sys

@@ -23,10 +23,14 @@
 """
 
 import sys
-from algs4.sequential_search_st import SequentialSearchST
+# from algs4.sequential_search_st import SequentialSearchST
+#from algs4.binary_search_st import BinarySearchST
+from algs4.red_black_bst import RedBlackBST
 
 minlen = int(sys.argv[1])
-st = SequentialSearchST()
+# st = SequentialSearchST()
+#st = BinarySearchST()
+st = RedBlackBST()
 
 for line in sys.stdin:
     words = line.split()
@@ -40,7 +44,7 @@ for line in sys.stdin:
 
 maxstr = ""
 st.put(maxstr, 0)
-for word in st.keys():
+for word in st.Keys():
     if st.get(word) > st.get(maxstr):
         maxstr = word
 print(maxstr, " ", st.get(maxstr))

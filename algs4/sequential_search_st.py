@@ -71,7 +71,7 @@ class SequentialSearchST:
             prev = curr
             curr = curr.next
 
-    def keys(self):
+    def Keys(self):
         return STKeyIterator(self.first)
 
     def is_empty(self):
