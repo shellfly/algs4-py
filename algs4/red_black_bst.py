@@ -361,5 +361,5 @@ if __name__ == '__main__':
     for s in st.level_order():
         print(s + " " + str(st.get(s)))
     print()
-    for s in st.keys():
+    for s in st.Keys():
         print(s + " " + str(st.get(s)))

@@ -6,11 +6,11 @@
   Run depth first search on an undirected graph.
   Runs in O(E + V) time.
 
- % python depth_first_search tinyG.txt 0
+ % python depth_first_search.py tinyG.txt 0
   0 1 2 3 4 5 6
   NOT connected
 
- % python depth_frist_search tinyG.txt 9
+ % python depth_first_search.py tinyG.txt 9
   9 10 11 12
   NOT connected
 
@@ -31,6 +31,7 @@ class DepthFirstSearch:
         for w in G.adj[v]:
             if not self.marked[w]:
                 self.dfs(G, w)
+
 
 if __name__ == '__main__':
     import sys

@@ -88,5 +88,5 @@ if __name__ == '__main__':
             st.put(key, i)
             i += 1
 
-    for key in st.keys():
+    for key in st.Keys():
         print(key + " " + str(st.get(key)))
