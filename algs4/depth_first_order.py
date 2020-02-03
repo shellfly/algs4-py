@@ -51,7 +51,7 @@ class DepthFirstOrder:
                 self.dfs(G, w)
         self.post.enqueue(v)
 
-    def reversePost(self):
+    def reverse_post(self):
         reverse = Stack()
         for v in self.post:
             reverse.push(v)
@@ -74,6 +74,6 @@ if __name__ == '__main__':
     print()
 
     print("ReversePostorder: ")
-    for v in dfs.reversePost():
+    for v in dfs.reverse_post():
         print(v, " ", end="")
     print()

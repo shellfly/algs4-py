@@ -64,9 +64,9 @@ Try to keep the interface and variable name consistent with the original book wh
     * [Digraph](algs4/digraph.py)
     * [DirectedDFS](algs4/directed_dfs.py)
     * [DirectedCycle](algs4/directed_cycle.py)
-    * [DepthFirstOrder](depth_first_order.go)
-    * [Topological](topological.go)
-    * [KosarajuSCC](kosaraju_scc.go)
+    * [DepthFirstOrder](algs4/depth_first_order.py)
+    * [Topological](algs4/topological.py)
+    * [KosarajuSCC](algs4/kosaraju_scc.py)
 
 * 5 STRING
 
