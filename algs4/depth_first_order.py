@@ -40,7 +40,7 @@ class DepthFirstOrder:
         self.post = Queue()
         for w in range(G.V):
             if not self.marked[w]:
-                self.dfs(g, w)
+                self.dfs(G, w)
 
     def dfs(self, G, v):
         self.pre.enqueue(v)
