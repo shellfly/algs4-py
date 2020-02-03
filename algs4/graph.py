@@ -31,6 +31,7 @@
    2: 141 110 108 86 79 51 42 18 14 
    ...
  """
+from algs4.bag import Bag
 
 
 class Graph:
@@ -40,7 +41,7 @@ class Graph:
         self.E = 0
         self.adj = {}
         for v in range(self.V):
-            self.adj[v] = []
+            self.adj[v] = Bag()
 
     def __str__(self):
         s = "%d vertices, %d edges\n" % (self.V, self.E)
@@ -50,8 +51,8 @@ class Graph:
 
     def add_edge(self, v, w):
         v, w = int(v), int(w)
-        self.adj[v].append(w)
-        self.adj[w].append(v)
+        self.adj[v].add(w)
+        self.adj[w].add(v)
         self.E += 1
 
     def degree(self, v):
@@ -70,6 +71,7 @@ class Graph:
                 if w == v:
                     count += 1
         return count
+
 
 if __name__ == '__main__':
     import sys

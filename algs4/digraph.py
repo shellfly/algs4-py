@@ -25,16 +25,28 @@
    12: 9 
  
  """
+from algs4.bag import Bag
 
 
 class Digraph:
 
-    def __init__(self, v):
+    def __init__(self, v=0, **kwargs):
         self.V = v
         self.E = 0
         self.adj = {}
         for v in range(self.V):
-            self.adj[v] = []
+            self.adj[v] = Bag()
+
+        if 'file' in kwargs:
+            # init a digraph by a file input
+            in_file = kwargs['file']
+            self.V = int(in_file.readline())
+            for v in range(self.V):
+                self.adj[v] = Bag()
+            E = int(in_file.readline())
+            for i in range(E):
+                v, w = in_file.readline().split()
+                self.add_edge(int(v), int(w))
 
     def __str__(self):
         s = "%d vertices, %d edges\n" % (self.V, self.E)
@@ -44,7 +56,7 @@ class Digraph:
 
     def add_edge(self, v, w):
         v, w = int(v), int(w)
-        self.adj[v].append(w)
+        self.adj[v].add(w)
         self.E += 1
 
     def degree(self, v):
@@ -72,6 +84,7 @@ class Digraph:
                 R.add_edge(w, v)
             v += 1
         return R
+
 
 if __name__ == '__main__':
     import sys

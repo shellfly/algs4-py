@@ -51,18 +51,22 @@ Try to keep the interface and variable name consistent with the original book wh
   * [LinearProbingHashST](algs4/linear_probing_hash_st.py)
 
 * 4 GRAPHS
-
-  * [Graph](algs4/graph.py)
-  * [DepthFirstSearch](algs4/depth_first_search.py)
-  * [DepthFirstPaths](algs4/depth_first_paths.py)
-  * [BreadthFirstPaths](algs4/breadth_first_paths.py)
-  * [CC](algs4/cc.py)
-  * [Cycle](algs4/cycle.py)
-  * [SymbolGraph](algs4/symbol_graph.py)
-  * [DegreesOfSeparation](algs4/degrees_of_separation.py)
-  * [Digraph](algs4/digraph.py)
-  * [DirectedDFS](algs4/directed_dfs.py)
-  * [DirectedCycle](algs4/directed_cycle.py)
+  * Graph
+    * [Graph](algs4/graph.py)
+    * [DepthFirstSearch](algs4/depth_first_search.py)
+    * [DepthFirstPaths](algs4/depth_first_paths.py)
+    * [BreadthFirstPaths](algs4/breadth_first_paths.py)
+    * [CC](algs4/cc.py)
+    * [Cycle](algs4/cycle.py)
+    * [SymbolGraph](algs4/symbol_graph.py)
+    * [DegreesOfSeparation](algs4/degrees_of_separation.py)
+  * Digraph
+    * [Digraph](algs4/digraph.py)
+    * [DirectedDFS](algs4/directed_dfs.py)
+    * [DirectedCycle](algs4/directed_cycle.py)
+    * [DepthFirstOrder](depth_first_order.go)
+    * [Topological](topological.go)
+    * [KosarajuSCC](kosaraju_scc.go)
 
 * 5 STRING
 
