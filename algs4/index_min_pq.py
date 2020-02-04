@@ -30,6 +30,12 @@ class IndexMinPQ:
         self.qp[i] = -1
         return item
 
+    def decrease_key(self, i, key):
+        if self.keys[i] <= key:
+            raise Exception("calling decrease key with invalid value")
+        self.keys[i] = key
+        self.swim(self.qp[i])
+
     def greater(self, i, j):
         return self.keys[self.pq[i]] > self.keys[self.pq[j]]
 
@@ -43,7 +49,6 @@ class IndexMinPQ:
         self.sink(0)
 
         self.qp[m] = -1
-        self.keys[m] = None
         return m
 
     def is_empty(self, ):

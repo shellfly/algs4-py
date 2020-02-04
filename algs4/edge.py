@@ -7,13 +7,11 @@ class Edge:
     def __str__(self):
         return "%d-%s %.5f" % (self.v, self.w, self.weight)
 
-    def __cmp__(self, other):
-        if self.weihgt < other.weight:
-            return -1
-        elif self.weight > other.weight:
-            return 1
-        else:
-            return 0
+    def __lt__(self, other):
+        return self.weight < other.weight
+
+    def __gt__(self, other):
+        return self.weight > other.weight
 
     def either(self):
         return self.v
