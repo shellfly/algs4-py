@@ -67,6 +67,11 @@ Try to keep the interface and variable name consistent with the original book wh
     * [DepthFirstOrder](algs4/depth_first_order.py)
     * [Topological](algs4/topological.py)
     * [KosarajuSCC](algs4/kosaraju_scc.py)
+  * MST
+    * [EdgeWeightedGraph](cmd/edge_weighted_graph.py)
+    * [LazyPrimMST](cmd/lazy_prim_mst.py)
+    * [PrimMST](cmd/prim_mst.py)
+    * [KruskalMST](cmd/kruskal_mst.py)
 
 * 5 STRING
 
