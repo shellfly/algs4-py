@@ -7,9 +7,9 @@ The official Java source code is <a href="https://github.com/kevin-wayne/algs4">
 
 ## Goals
 
-Make a Python implementation of the library so that a Python programmer can learn this book easily.
+Make a Python implementation of the library so that a Python programmer can follow this book easily or prefer to demonstrate the algorithms using Python.
 
-Try to keep the interface and variable name consistent with the original book while not violating Python coding standards.
+Try to keep the interface and variable name consistent with the original book while writing idiomatic Python code.
 
 ## Install (WIP)
 
