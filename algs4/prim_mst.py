@@ -38,7 +38,6 @@
 
 from algs4.edge_weighted_graph import EdgeWeightedGraph
 from algs4.index_min_pq import IndexMinPQ
-from algs4.queue import Queue
 
 
 class PrimMST:

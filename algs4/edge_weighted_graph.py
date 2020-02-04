@@ -61,7 +61,7 @@ class EdgeWeightedGraph:
         for v in range(self.V):
             for e in self.adj[v]:
                 if e.other(v) > v:
-                    edges.append(v)
+                    edges.append(e)
         return edges
 
 
