@@ -72,6 +72,11 @@ Try to keep the interface and variable name consistent with the original book wh
     * [LazyPrimMST](algs4/lazy_prim_mst.py)
     * [PrimMST](algs4/prim_mst.py)
     * [KruskalMST](algs4/kruskal_mst.py)
+  * Shortest Paths
+    * [EdgeWeightedDigraph](algs4/edge_weighted_digraph.py)
+    * [DijkstraSP](algs4/dijkstra_sp.py)
+    * [AcyclicSP](algs4/acyclic_sp.py)
+    * [Bellman-FordSP](algs4/bellman_ford_sp.py)
 
 * 5 STRING
 
