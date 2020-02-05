@@ -76,7 +76,7 @@ Try to keep the interface and variable name consistent with the original book wh
     * [EdgeWeightedDigraph](algs4/edge_weighted_digraph.py)
     * [DijkstraSP](algs4/dijkstra_sp.py)
     * [AcyclicSP](algs4/acyclic_sp.py)
-    * [Bellman-FordSP](algs4/bellman_ford_sp.py)
+    * [BellmanFordSP](algs4/bellman_ford_sp.py)
 
 * 5 STRING
 
