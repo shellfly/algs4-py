@@ -82,6 +82,8 @@ Try to keep the interface and variable name consistent with the original book wh
   * [LSD](algs4/lsd.py)
   * [MSD](algs4/msd.py)
   * [Quick3string](algs4/quick3_string.py)
+  * [TrieST](algs4/trie_st.py)
+  
 ## License
 
 This code is released under MIT.
