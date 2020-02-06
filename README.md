@@ -79,9 +79,9 @@ Try to keep the interface and variable name consistent with the original book wh
     * [BellmanFordSP](algs4/bellman_ford_sp.py)
 
 * 5 STRING
-
   * [LSD](algs4/lsd.py)
-
+  * [MSD](algs4/msd.py)
+  * [Quick3string](algs4/quick3_string.py)
 ## License
 
 This code is released under MIT.
