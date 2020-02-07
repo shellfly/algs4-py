@@ -19,7 +19,7 @@ class Bag:
         self.n = 0
 
     def __str__(self):
-        return " ".join(i for i in self)
+        return " ".join(str(i) for i in self)
 
     def __iter__(self):
         return LinkIterator(self.first)
