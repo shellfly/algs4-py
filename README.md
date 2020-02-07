@@ -84,6 +84,8 @@ Try to keep the interface and variable name consistent with the original book wh
   * [Quick3string](algs4/quick3_string.py)
   * [TrieST](algs4/trie_st.py)
   * [TST](algs4/tst.py)
+  * [KMP](algs4/kmp.py)
+  
 ## License
 
 This code is released under MIT.

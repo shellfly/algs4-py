@@ -1,5 +1,5 @@
 """
-*  Compilation:  python multiway.py
+*  Execution:    python multiway.py
 *  Data files:   https://algs4.cs.princeton.edu/24pq/m1.txt
 *                https://algs4.cs.princeton.edu/24pq/m2.txt
 *                https://algs4.cs.princeton.edu/24pq/m3.txt
