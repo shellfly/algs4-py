@@ -37,7 +37,7 @@ class MinPQ:
             if j < N - 1 and self.pq[j] > self.pq[j + 1]:
                 j += 1
 
-            if self.pq[k] < self.pq[j]:
+            if not self.pq[j] < self.pq[k]:
                 break
 
             self.pq[k], self.pq[j] = self.pq[j], self.pq[k]

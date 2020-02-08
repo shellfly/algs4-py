@@ -86,6 +86,8 @@ Try to keep the interface and variable name consistent with the original book wh
   * [TST](algs4/tst.py)
   * [KMP](algs4/kmp.py)
   * [NFA](algs4/nfa.py)
+  * [Huffman](algs4/huffman.py)
+  * [LZW](algs4/lzw.py)
 
 ## License
 
