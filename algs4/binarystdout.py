@@ -39,6 +39,11 @@ class BinaryStdout:
             cls.clear_buffer()
 
     @classmethod
+    def write_str(cls, s):
+        for i in range(len(s)):
+            cls.write_byte(ord(s[i]))
+
+    @classmethod
     def clear_buffer(cls):
         if cls.n == 0:
             return
