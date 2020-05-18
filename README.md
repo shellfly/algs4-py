@@ -1,3 +1,5 @@
+[![PyPI version](https://badge.fury.io/py/algs4.svg)](https://badge.fury.io/py/algs4)
+
 ## Overview
 
 This repository contains the Python source code for the algorithms in the textbook
@@ -13,7 +15,9 @@ Try to keep the interface and variable name consistent with the original book wh
 
 ## Install
 
-`# pip install algs4`
+```sh
+pip install algs4
+```
 
 ```python
 from algs4 import Stack
