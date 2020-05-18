@@ -11,11 +11,13 @@ Make a Python implementation of the library so that a Python programmer can foll
 
 Try to keep the interface and variable name consistent with the original book while writing idiomatic Python code.
 
-## Install (WIP)
+## Install
 
 `# pip install algs4`
 
-`from algs4 import Stack`
+```python
+from algs4 import Stack
+```
 
 ## Index
 

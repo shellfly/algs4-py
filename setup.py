@@ -16,9 +16,10 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='algs4',
-    version='1.0.0',
+    version='1.0.1',
     description='A Python implementation library for book algs4',
     long_description=long_description,
+    long_description_content_type='text/markdown',
     url='https://github.com/shellfly/algs4-py',
     author='shellfly',
     author_email='shell0fly@gmail.com',
