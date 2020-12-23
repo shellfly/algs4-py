@@ -1,13 +1,13 @@
 """
- *  Execution:    python edge_weighted_graph.py filename.txt
+ *  Execution:    python edge_weighted_digraph.py filename.txt
  *  Data files:   https://algs4.cs.princeton.edu/43mst/tinyEWG.txt
  *                https://algs4.cs.princeton.edu/43mst/mediumEWG.txt
  *                https://algs4.cs.princeton.edu/43mst/largeEWG.txt
  *
- *  An edge-weighted undirected graph, implemented using adjacency lists.
+ *  An edge-weighted directed graph, implemented using adjacency lists.
  *  Parallel edges and self-loops are permitted.
  *
- *  % python edge_weighted_graph.py tinyEWD.txt
+ *  % python edge_weighted_digraph.py tinyEWD.txt
  * 8 vertices, 15 edges
  * 0: 0->2 0.26000 0->4 0.38000
  * 1: 1->3 0.29000
@@ -63,5 +63,5 @@ class EdgeWeightedDigraph:
 
 if __name__ == "__main__":
     import sys
-    graph = EdgeWeightedDiraph(file=open(sys.argv[1]))
+    graph = EdgeWeightedDigraph(file=open(sys.argv[1]))
     print(graph)

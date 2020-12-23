@@ -20,7 +20,7 @@ pip install algs4
 ```
 
 ```python
-from algs4 import Stack
+from algs4.stack import Stack
 ```
 
 ## Index

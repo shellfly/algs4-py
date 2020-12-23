@@ -339,7 +339,7 @@ class RedBlackBST:
         return self.balance(h)
 
     def balance(self, h):
-        if self.is_red(h):
+        if self.is_red(h) and not self.is_red(h.left):
             h = self.rotate_left(h)
         if self.is_red(h.left) and self.is_red(h.left.left):
             h = self.rotate_right(h)
