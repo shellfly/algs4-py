@@ -4,7 +4,7 @@ from algs4.stack import Stack
 POSITIVE_INFINITY = 999999.0
 
 
-class DijkstraSP:
+class BellmanFordSP:
     def __init__(self, g, s):
         self.cost = 0
         self.cycle = None
