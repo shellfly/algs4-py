@@ -16,7 +16,7 @@ with open(path.join(here, "README.md"), encoding="utf-8") as f:
 
 setup(
     name="algs4",
-    version="1.0.2",
+    version="1.0.3",
     description="A Python implementation library for book algs4",
     long_description=long_description,
     long_description_content_type="text/markdown",
