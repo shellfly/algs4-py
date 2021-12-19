@@ -1,5 +1,7 @@
 from algs4.queue import Queue
 from algs4.stack import Stack
+from algs4.edge_weighted_digraph import EdgeWeightedDigraph
+from algs4.edge_weighted_directed_cycle import EdgeWeightedDirectedCycle
 
 POSITIVE_INFINITY = 999999.0
 
@@ -26,7 +28,7 @@ class BellmanFordSP:
     def relax(self, g, v):
         for e in g.adj[v]:
             w = e.To()
-            if self.distTo[w] > self.distTo[v]+e.weight:
+            if self.distTo[w] > self.distTo[v] + e.weight:
                 self.distTo[w] = self.distTo[v] + e.weight
                 self.edgeTo[w] = e
                 if not self.onQ[w]:

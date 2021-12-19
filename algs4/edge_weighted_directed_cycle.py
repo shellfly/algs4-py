@@ -9,51 +9,78 @@
  *
  *
 """
-from algs4.bag import Bag
+import random
+
+from algs4.stack import Stack
 from algs4.directed_edge import DirectedEdge
+from algs4.edge_weighted_digraph import EdgeWeightedDigraph
 
 
 class EdgeWeightedDirectedCycle:
-    def __init__(self, v=0, **kwargs):
-        self.V = v
-        self.E = 0
-        self.adj = {}
-        for v in range(self.V):
-            self.adj[v] = Bag()
+    def __init__(self, G):
+        self.cycle = None
+        self.marked = [False for _ in range(G.V)]
+        self.on_stack = [False for _ in range(G.V)]
+        self.edge_to = [None for _ in range(G.V)]
+        for v in range(G.V):
+            if not self.marked[v]:
+                self.dfs(G, v)
 
-        if 'file' in kwargs:
-            # init a digraph by a file input
-            in_file = kwargs['file']
-            self.V = int(in_file.readline())
-            for v in range(self.V):
-                self.adj[v] = Bag()
-            E = int(in_file.readline())
-            for i in range(E):
-                v, w, weight = in_file.readline().split()
-                self.add_edge(DirectedEdge(int(v), int(w), float(weight)))
+    def dfs(self, G, v):
+        self.on_stack[v] = True
+        self.marked[v] = True
+        for e in G.adj[v]:
+            w = e.To()
+            if self.cycle is not None:
+                return
+            elif not self.marked[w]:
+                print("push stack", e)
+                self.edge_to[w] = e
+                self.dfs(G, w)
+            elif self.on_stack[w]:
+                # trace back directed cycle
+                self.cycle = Stack()
+                f = e
+                while f.From() != w:
+                    self.cycle.push(f)
+                    f = self.edge_to[f.From()]
+                self.cycle.push(f)
+                return
+        self.on_stack[v] = False
 
-    def __str__(self):
-        s = "%d vertices, %d edges\n" % (self.V, self.E)
-        for i in range(self.V):
-            adjs = " ".join([str(x) for x in self.adj[i]])
-            s += "%d: %s\n" % (i, adjs)
-        return s
-
-    def add_edge(self, e):
-        self.adj[e.From()].add(e)
-        self.E += 1
-
-    def edges(self):
-        edges = []
-        for v in range(self.V):
-            for e in self.adj[v]:
-                edges.append(e)
-        return edges
+    def has_cycle(self):
+        return self.cycle is not None
 
 
 if __name__ == "__main__":
     import sys
-    V, E, F = sys.argv[1:]
-    graph = EdgeWeightedDirectedCycle(int(V), int(E), int(F))
 
+    V, E, F = sys.argv[1:]
+    V = int(V)
+    E = int(E)
+    F = int(F)
+    graph = EdgeWeightedDigraph(V)
+    for _ in range(int(E)):
+        v = 0
+        w = 0
+        while v >= w:
+            v = random.randint(0, V - 1)
+            w = random.randint(0, V - 1)
+        weight = random.uniform(0, 1)
+        graph.add_edge(DirectedEdge(v, w, weight))
+    #  add F extra edges
+    for _ in range(int(E)):
+        v = random.randint(0, V - 1)
+        w = random.randint(0, V - 1)
+        weight = random.uniform(0, 1)
+        graph.add_edge(DirectedEdge(v, w, weight))
     print(graph)
+
+    finder = EdgeWeightedDirectedCycle(graph)
+    if finder.has_cycle():
+        print("find cycle:\n")
+        for e in finder.cycle:
+            print(e, " ")
+        print()
+    else:
+        print("No directed cycle")
