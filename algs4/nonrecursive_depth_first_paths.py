@@ -1,13 +1,13 @@
 """
-   Execution:  python depth_first_paths.py G s
+   Execution:  python nonrecursive_depth_first_paths.py G s
 
    Data files:   https://algs4.cs.princeton.edu/41graph/tinyCG.txt
                  https://algs4.cs.princeton.edu/41graph/tinyG.txt
                  https://algs4.cs.princeton.edu/41graph/mediumG.txt
                  https://algs4.cs.princeton.edu/41graph/largeG.txt
 
-   Run depth first search on an undirected graph.
-   Runs in O(E + V) time.
+   Run nonrecurisve depth-first search on an undirected graph.
+   Runs in O(E + V) time using O(V) extra space.
 
    %  python graph.py tinyCG.txt
    6 8
@@ -18,7 +18,7 @@
    4: 3 2
    5: 3 0
 
-   % python depth_first_paths.py tinyCG.txt 0
+   % python nonrecursive_depth_first_paths.py tinyCG.txt 0
    0 to 0:  0
    0 to 1:  0-2-1
    0 to 2:  0-2
@@ -31,20 +31,27 @@ from algs4.stack import Stack
 from algs4.graph import Graph
 
 
-class DepthFirstPaths:
+class NRDepthFirstPaths:
 
     def __init__(self, G, s):
         self.marked = [False for _ in range(G.V)]
         self.edge_to = [0 for _ in range(G.V)]
         self.s = s
-        self.dfs(G, s)
 
-    def dfs(self, G, v):
-        self.marked[v] = True
-        for w in G.adj[v]:
-            if not self.marked[w]:
-                self.edge_to[w] = v
-                self.dfs(G, w)
+        stack = Stack()
+        stack.push(s)
+
+        while not stack.is_empty():
+            v = stack.peek()
+            stack.pop()
+
+            if not self.marked[v]:
+                self.marked[v] = True
+
+            for node in G.adj[v]:
+                if not self.marked[node]:
+                    self.edge_to[node] = v
+                    stack.push(node)
 
     def has_path_to(self, v):
         return self.marked[v]
@@ -71,7 +78,7 @@ if __name__ == '__main__':
     for i in range(E):
         v, w = f.readline().split()
         g.add_edge(v, w)
-    dfs = DepthFirstPaths(g, s)
+    dfs = NRDepthFirstPaths(g, s)
     for v in range(g.V):
         if dfs.has_path_to(v):
             print("%d to %d: " % (s, v), end='')

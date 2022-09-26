@@ -43,6 +43,11 @@ class Stack:
             self.n -= 1
             return item
 
+    def peek(self):
+        if self.is_empty():
+            raise ValueError("Stack underflow")
+        return self.first.item
+
 
 if __name__ == '__main__':
     import sys
