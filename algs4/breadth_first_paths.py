@@ -87,11 +87,11 @@ if __name__ == '__main__':
     for i in range(E):
         v, w = f.readline().split()
         g.add_edge(v, w)
-    dfs = BreadthFirstPaths(g, s)
+    bfs = BreadthFirstPaths(g, s)
     for v in range(g.V):
-        if dfs.has_path_to(v):
+        if bfs.has_path_to(v):
             print("%d to %d: " % (s, v), end='')
-            for x in dfs.path_to(v):
+            for x in bfs.path_to(v):
                 if x == s:
                     print(x, end='')
                 else:
