@@ -6,8 +6,8 @@
                  https://algs4.cs.princeton.edu/41graph/mediumG.txt
                  https://algs4.cs.princeton.edu/41graph/largeG.txt
 
-   Run depth first search (non-recursive implementation) on an undirected graph.
-   Runs in O(E + V) time.
+   Run nonrecurisve depth-first search on an undirected graph.
+   Runs in O(E + V) time using O(V) extra space.
 
    %  python graph.py tinyCG.txt
    6 8

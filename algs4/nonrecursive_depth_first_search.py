@@ -3,8 +3,8 @@
   Data files:   https: // algs4.cs.princeton.edu / 41graph / tinyG.txt
                 https: // algs4.cs.princeton.edu / 41graph / mediumG.txt
 
-  Run depth first search (non-recursive implementation) on an undirected graph.
-  Runs in O(E + V) time.
+  Run nonrecurisve depth-first search on an undirected graph.
+  Runs in O(E + V) time using O(V) extra space.
 
  % python nonrecursive_depth_first_search.py tinyG.txt 0
   0 1 2 3 4 5 6
